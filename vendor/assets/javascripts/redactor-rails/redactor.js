@@ -415,10 +415,10 @@ REDACTOR = {version: "10.2.5",  instances: {}, params: {}};
 			// // start callback
 			// this.core.setCallback('start');
 			//
-			// // build
-			// this.start = true;
-			// this.build.run();
-            // $(document).find('.redactor-toolbar-tooltip').hide();
+			// build
+			this.start = true;
+			this.build.run();
+            $(document).find('.redactor-toolbar-tooltip').hide();
             // //autosave
             // this.autosave.enable();
 		},
