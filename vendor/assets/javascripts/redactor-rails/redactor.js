@@ -385,27 +385,27 @@ REDACTOR = {version: "10.2.5",  instances: {}, params: {}};
 
 			this.loadOptions(options);
 			this.loadModules();
-			//
-			// // formatting storage
-			// this.formatting = {};
-			//
-			// // block level tags
-			// $.merge(this.opts.blockLevelElements, this.opts.alignmentTags);
-			// this.reIsBlock = new RegExp('^(' + this.opts.blockLevelElements.join('|' ) + ')$', 'i');
-			//
-			// // setup allowed and denied tags
-			// this.tidy.setupAllowed();
-			//
-			// // setup denied tags
-			// if (this.opts.deniedTags !== false)
-			// {
-			// 	var tags = ['html', 'head', 'link', 'body', 'meta', 'applet'];
-			// 	for (var i = 0; i < tags.length; i++)
-			// 	{
-			// 		this.opts.deniedTags.push(tags[i]);
-			// 	}
-			// }
-			//
+
+			// formatting storage
+			this.formatting = {};
+
+			// block level tags
+			$.merge(this.opts.blockLevelElements, this.opts.alignmentTags);
+			this.reIsBlock = new RegExp('^(' + this.opts.blockLevelElements.join('|' ) + ')$', 'i');
+
+			// setup allowed and denied tags
+			this.tidy.setupAllowed();
+
+			// setup denied tags
+			if (this.opts.deniedTags !== false)
+			{
+				var tags = ['html', 'head', 'link', 'body', 'meta', 'applet'];
+				for (var i = 0; i < tags.length; i++)
+				{
+					this.opts.deniedTags.push(tags[i]);
+				}
+			}
+
 			// // load lang
 			// this.lang.load();
 			//
