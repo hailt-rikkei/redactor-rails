@@ -376,15 +376,15 @@ REDACTOR = {version: "10.2.5",  instances: {}, params: {}};
 		// Initialization
 		init: function(el, options)
 		{
-			// this.$element = $(el);
-			// this.uuid = uuid++;
-			//
-			// // if paste event detected = true
-			// this.rtePaste = false;
-			// this.$pasteBox = false;
-			//
-			// this.loadOptions(options);
-			// this.loadModules();
+			this.$element = $(el);
+			this.uuid = uuid++;
+
+			// if paste event detected = true
+			this.rtePaste = false;
+			this.$pasteBox = false;
+
+			this.loadOptions(options);
+			this.loadModules();
 			//
 			// // formatting storage
 			// this.formatting = {};
