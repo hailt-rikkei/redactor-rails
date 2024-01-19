@@ -376,51 +376,51 @@ REDACTOR = {version: "10.2.5",  instances: {}, params: {}};
 		// Initialization
 		init: function(el, options)
 		{
-			this.$element = $(el);
-			this.uuid = uuid++;
-
-			// if paste event detected = true
-			this.rtePaste = false;
-			this.$pasteBox = false;
-
-			this.loadOptions(options);
-			this.loadModules();
-
-			// formatting storage
-			this.formatting = {};
-
-			// block level tags
-			$.merge(this.opts.blockLevelElements, this.opts.alignmentTags);
-			this.reIsBlock = new RegExp('^(' + this.opts.blockLevelElements.join('|' ) + ')$', 'i');
-
-			// setup allowed and denied tags
-			this.tidy.setupAllowed();
-
-			// setup denied tags
-			if (this.opts.deniedTags !== false)
-			{
-				var tags = ['html', 'head', 'link', 'body', 'meta', 'applet'];
-				for (var i = 0; i < tags.length; i++)
-				{
-					this.opts.deniedTags.push(tags[i]);
-				}
-			}
-
-			// // load lang
-			// this.lang.load();
+			// this.$element = $(el);
+			// this.uuid = uuid++;
 			//
-			// // extend shortcuts
-			// $.extend(this.opts.shortcuts, this.opts.shortcutsAdd);
+			// // if paste event detected = true
+			// this.rtePaste = false;
+			// this.$pasteBox = false;
 			//
-			// // start callback
-			// this.core.setCallback('start');
+			// this.loadOptions(options);
+			// this.loadModules();
 			//
+			// // formatting storage
+			// this.formatting = {};
+			//
+			// // block level tags
+			// $.merge(this.opts.blockLevelElements, this.opts.alignmentTags);
+			// this.reIsBlock = new RegExp('^(' + this.opts.blockLevelElements.join('|' ) + ')$', 'i');
+			//
+			// // setup allowed and denied tags
+			// this.tidy.setupAllowed();
+			//
+			// // setup denied tags
+			// if (this.opts.deniedTags !== false)
+			// {
+			// 	var tags = ['html', 'head', 'link', 'body', 'meta', 'applet'];
+			// 	for (var i = 0; i < tags.length; i++)
+			// 	{
+			// 		this.opts.deniedTags.push(tags[i]);
+			// 	}
+			// }
+
+			// load lang
+			this.lang.load();
+
+			// extend shortcuts
+			$.extend(this.opts.shortcuts, this.opts.shortcutsAdd);
+
+			// start callback
+			this.core.setCallback('start');
+
 			// build
 			this.start = true;
 			this.build.run();
             $(document).find('.redactor-toolbar-tooltip').hide();
-            // //autosave
-            // this.autosave.enable();
+            //autosave
+            this.autosave.enable();
 		},
 
 		loadOptions: function(options)
